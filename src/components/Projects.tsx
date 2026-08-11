@@ -211,7 +211,7 @@ export default function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-4"
+            className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-4"
           >
             My Featured <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Projects</span>
           </motion.h2>
@@ -233,10 +233,10 @@ export default function Projects() {
                 setFilter(cat);
                 setShowAll(false);
               }}
-              className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide uppercase transition-all duration-300 ${
+              className={`px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 ${
                 filter === cat
                   ? "bg-gradient-to-r from-primary to-secondary text-white shadow-md shadow-primary/20 scale-105"
-                  : "glass-card text-slate-300 hover:text-white hover:border-primary/30"
+                  : "bg-white border border-slate-200 text-slate-600 hover:text-slate-900 hover:border-primary/30"
               }`}
             >
               {cat === "ai" ? "AI & Automation" : cat === "security" ? "Security & Desktop" : cat}
@@ -260,23 +260,23 @@ export default function Projects() {
                 transition={{ duration: 0.4 }}
                 whileHover={{ y: -6 }}
                 onClick={() => setSelectedProject(project)}
-                className="glass-card rounded-2xl overflow-hidden cursor-pointer flex flex-col justify-between group p-6 border border-white/5 relative"
+                className="bg-white rounded-2xl overflow-hidden cursor-pointer flex flex-col justify-between group p-6 border border-slate-200 shadow-sm hover:shadow-lg transition-all"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
                     <span className="px-3 py-1 rounded-full text-[10px] uppercase font-mono tracking-wider bg-primary/10 border border-primary/20 text-primary">
                       {project.category === "ai" ? "AI & Automation" : project.category === "security" ? "Security & Sys" : project.category}
                     </span>
-                    <div className="p-2 rounded-lg bg-white/5 border border-white/10 text-slate-400 group-hover:text-primary transition-colors">
+                    <div className="p-2 rounded-lg bg-slate-100 border border-slate-200 text-slate-500 group-hover:text-primary transition-colors">
                       <Code2 className="w-4 h-4" />
                     </div>
                   </div>
 
-                  <h3 className="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors duration-200 line-clamp-1">
+                  <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-primary transition-colors duration-200 line-clamp-1">
                     {project.title}
                   </h3>
 
-                  <p className="text-sm text-slate-400 mb-6 line-clamp-3">
+                  <p className="text-sm text-slate-600 mb-6 line-clamp-3">
                     {project.description}
                   </p>
                 </div>
@@ -286,19 +286,19 @@ export default function Projects() {
                     {project.tech.slice(0, 3).map((t) => (
                       <span
                         key={t}
-                        className="px-2 py-1 rounded bg-white/5 border border-white/5 text-[10px] font-mono text-slate-400"
+                        className="px-2 py-1 rounded bg-slate-100 border border-slate-200 text-[10px] font-mono text-slate-600"
                       >
                         {t}
                       </span>
                     ))}
                     {project.tech.length > 3 && (
-                      <span className="px-2 py-1 rounded bg-white/5 border border-white/5 text-[10px] font-mono text-slate-500">
+                      <span className="px-2 py-1 rounded bg-slate-100 border border-slate-200 text-[10px] font-mono text-slate-500">
                         +{project.tech.length - 3} more
                       </span>
                     )}
                   </div>
 
-                  <div className="flex items-center text-xs font-bold text-secondary group-hover:underline">
+                  <div className="flex items-center text-xs font-bold text-primary group-hover:underline">
                     <span>View System Details</span>
                     <ExternalLink className="w-3.5 h-3.5 ml-1" />
                   </div>
@@ -313,7 +313,7 @@ export default function Projects() {
           <div className="text-center mt-12">
             <button
               onClick={() => setShowAll(!showAll)}
-              className="px-6 py-3 rounded-xl font-bold bg-white/5 border border-white/10 hover:border-primary/40 text-white hover:bg-white/10 transition-all duration-300"
+              className="px-6 py-3 rounded-xl font-bold bg-white border border-slate-200 hover:border-primary/40 text-slate-800 hover:bg-slate-50 transition-all duration-300"
             >
               {showAll ? "Show Less" : "Show All Projects"}
             </button>
@@ -330,7 +330,7 @@ export default function Projects() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSelectedProject(null)}
-              className="absolute inset-0 bg-slate-950/80 backdrop-blur-md"
+              className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"
             />
             
             <motion.div
@@ -338,12 +338,12 @@ export default function Projects() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ type: "spring", duration: 0.5 }}
-              className="glass-modal w-full max-w-2xl rounded-2xl overflow-hidden shadow-2xl relative z-10 p-6 sm:p-8"
+              className="bg-white w-full max-w-2xl rounded-2xl overflow-hidden shadow-2xl relative z-10 p-6 sm:p-8 border border-slate-200"
             >
               {/* Close Button */}
               <button
                 onClick={() => setSelectedProject(null)}
-                className="absolute top-4 right-4 p-2 rounded-full bg-white/5 border border-white/5 text-slate-400 hover:text-white transition-colors"
+                className="absolute top-4 right-4 p-2 rounded-full bg-slate-100 border border-slate-200 text-slate-500 hover:text-slate-800 transition-colors"
                 aria-label="Close modal"
               >
                 <X className="w-5 h-5" />
@@ -354,25 +354,25 @@ export default function Projects() {
                   <span className="px-3 py-1 rounded-full text-[10px] uppercase font-mono tracking-wider bg-primary/10 border border-primary/20 text-primary inline-block mb-3">
                     {selectedProject.category === "ai" ? "AI & Automation" : selectedProject.category === "security" ? "Security & System" : selectedProject.category}
                   </span>
-                  <h3 className="text-2xl font-bold text-white tracking-tight">
+                  <h3 className="text-2xl font-bold text-slate-900 tracking-tight">
                     {selectedProject.title}
                   </h3>
                 </div>
 
-                <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+                <p className="text-slate-700 text-sm sm:text-base leading-relaxed">
                   {selectedProject.description}
                 </p>
 
                 {/* Key Accomplishments */}
                 <div>
-                  <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-3 flex items-center">
+                  <h4 className="text-sm font-semibold text-slate-900 uppercase tracking-wider mb-3 flex items-center">
                     <Sparkles className="w-4 h-4 text-secondary mr-2" />
                     Key Accomplishments & Features
                   </h4>
                   <ul className="space-y-2.5 pl-2">
                     {selectedProject.features.map((feature, i) => (
-                      <li key={i} className="flex items-start text-xs sm:text-sm text-slate-400 leading-relaxed">
-                        <span className="text-primary mr-2.5 font-bold">•</span>
+                      <li key={i} className="flex items-start text-xs sm:text-sm text-slate-600 leading-relaxed">
+                        <span className="text-accent mr-2.5 font-bold">•</span>
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -381,15 +381,15 @@ export default function Projects() {
 
                 {/* Tech Stack Used */}
                 <div>
-                  <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-3 flex items-center">
-                    <Cpu className="w-4 h-4 text-indigo-400 mr-2" />
+                  <h4 className="text-sm font-semibold text-slate-900 uppercase tracking-wider mb-3 flex items-center">
+                    <Cpu className="w-4 h-4 text-accent mr-2" />
                     Technologies Used
                   </h4>
                   <div className="flex flex-wrap gap-2">
                     {selectedProject.tech.map((t) => (
                       <span
                         key={t}
-                        className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-slate-300"
+                        className="px-3 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-xs font-mono text-slate-700"
                       >
                         {t}
                       </span>
@@ -398,12 +398,12 @@ export default function Projects() {
                 </div>
 
                 {/* Actions */}
-                <div className="flex flex-wrap gap-4 pt-4 border-t border-white/5">
+                <div className="flex flex-wrap gap-4 pt-4 border-t border-slate-200">
                   <a
                     href={selectedProject.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center space-x-2 px-5 py-2.5 rounded-xl font-bold bg-white/5 border border-white/10 text-white hover:bg-white/10 hover:border-primary/40 transition-all duration-200 text-sm"
+                    className="flex items-center space-x-2 px-5 py-2.5 rounded-xl font-bold bg-slate-100 border border-slate-200 text-slate-800 hover:bg-slate-200 hover:border-primary/40 transition-all duration-200 text-sm"
                   >
                     <Github className="w-4 h-4" />
                     <span>View Repository</span>

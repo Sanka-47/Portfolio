@@ -54,7 +54,7 @@ export default function Navbar() {
           <div className="p-2 rounded-lg bg-primary/10 border border-primary/20 group-hover:border-primary/40 transition-colors">
             <Terminal className="w-5 h-5 text-primary" />
           </div>
-          <span className="font-sans font-bold text-xl tracking-tight text-white">
+          <span className="font-sans font-bold text-xl tracking-tight text-slate-900">
             Kalindu<span className="text-primary font-black">.</span>K
           </span>
         </a>
@@ -68,7 +68,7 @@ export default function Navbar() {
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                 activeSection === item.href
                   ? "text-primary bg-primary/5"
-                  : "text-slate-300 hover:text-white"
+                  : "text-slate-600 hover:text-slate-900"
               }`}
             >
               {item.name}
@@ -85,7 +85,7 @@ export default function Navbar() {
         {/* Mobile Nav Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden p-2 text-slate-300 hover:text-white focus:outline-none"
+          className="md:hidden p-2 text-slate-600 hover:text-slate-900 focus:outline-none"
           aria-label="Toggle menu"
         >
           {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -111,7 +111,7 @@ export default function Navbar() {
                   className={`text-base font-semibold py-2 px-3 rounded-lg transition-all duration-200 ${
                     activeSection === item.href
                       ? "text-primary bg-primary/10"
-                      : "text-slate-300 hover:text-white hover:bg-white/5"
+                      : "text-slate-600 hover:text-slate-900 hover:bg-slate-100"
                   }`}
                 >
                   {item.name}

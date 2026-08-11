@@ -41,7 +41,7 @@ export default function Experience() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-4"
+            className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-4"
           >
             Work <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Experience</span>
           </motion.h2>
@@ -55,7 +55,7 @@ export default function Experience() {
         </div>
 
         {/* Timeline */}
-        <div className="max-w-4xl mx-auto relative border-l border-white/10 pl-6 sm:pl-10 space-y-12">
+        <div className="max-w-4xl mx-auto relative border-l border-slate-200 pl-6 sm:pl-10 space-y-12">
           {experiences.map((exp, index) => (
             <motion.div
               key={exp.role}
@@ -66,14 +66,14 @@ export default function Experience() {
               className="relative"
             >
               {/* Icon Marker */}
-              <div className="absolute -left-[45px] sm:-left-[61px] top-1 p-2 rounded-xl bg-[#030014] border border-white/10 text-primary">
+              <div className="absolute -left-[45px] sm:-left-[61px] top-1 p-2 rounded-xl bg-background border border-slate-200 text-primary">
                 <Briefcase className="w-5 h-5" />
               </div>
 
-              <div className="glass-card p-6 sm:p-8 rounded-2xl relative border border-white/5 hover:border-primary/20">
+              <div className="glass-card p-6 sm:p-8 rounded-2xl relative border border-slate-200/50 hover:border-primary/20">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
                   <div>
-                    <h3 className="text-xl font-bold text-white tracking-tight">
+                    <h3 className="text-xl font-bold text-slate-900 tracking-tight">
                       {exp.role}
                     </h3>
                     <p className="text-sm font-semibold text-secondary">
@@ -81,7 +81,7 @@ export default function Experience() {
                     </p>
                   </div>
                   
-                  <div className="inline-flex items-center text-xs text-slate-400 font-mono bg-white/5 px-3 py-1 rounded-full border border-white/5 w-fit">
+                  <div className="inline-flex items-center text-xs text-slate-600 font-mono bg-slate-100 px-3 py-1 rounded-full border border-slate-200 w-fit">
                     <Calendar className="w-3.5 h-3.5 mr-1.5 text-primary" />
                     <span>{exp.period}</span>
                   </div>
@@ -89,8 +89,8 @@ export default function Experience() {
 
                 <ul className="space-y-3.5">
                   {exp.bullets.map((bullet, i) => (
-                    <li key={i} className="flex items-start text-sm text-slate-300 leading-relaxed">
-                      <CheckCircle className="w-4 h-4 text-secondary flex-shrink-0 mt-0.5 mr-3" />
+                    <li key={i} className="flex items-start text-sm text-slate-700 leading-relaxed">
+                      <CheckCircle className="w-4 h-4 text-accent flex-shrink-0 mt-0.5 mr-3" />
                       <span>{bullet}</span>
                     </li>
                   ))}

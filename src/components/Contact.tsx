@@ -34,7 +34,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-4"
+            className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-4"
           >
             Get In <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Touch</span>
           </motion.h2>
@@ -57,21 +57,21 @@ export default function Contact() {
             className="lg:col-span-5 space-y-6"
           >
             <div className="glass-card p-6 rounded-2xl border border-white/5 space-y-8">
-              <h3 className="text-xl font-bold text-white tracking-tight">
+              <h3 className="text-xl font-bold text-slate-900 tracking-tight">
                 Let's discuss your next project
               </h3>
-              <p className="text-sm text-slate-400 leading-relaxed">
+              <p className="text-sm text-slate-600 leading-relaxed">
                 Whether you need a dynamic web app, a cross-platform mobile solution, or assistance setting up automated integration workflows, I am here to help. Reach out using the form or connect through my socials!
               </p>
 
               <div className="space-y-6 pt-4">
-                <div className="flex items-center space-x-4">
+                 <div className="flex items-center space-x-4">
                   <div className="p-3 rounded-xl bg-primary/10 border border-primary/20 text-primary">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="text-xs text-slate-500 font-semibold block">Email</span>
-                    <a href="mailto:kalindu47kk@gmail.com" className="text-sm font-bold text-white hover:text-primary transition-colors">
+                    <span className="text-xs text-slate-600 font-semibold block">Email</span>
+                    <a href="mailto:kalindu47kk@gmail.com" className="text-sm font-bold text-slate-900 hover:text-primary transition-colors">
                       kalindu47kk@gmail.com
                     </a>
                   </div>
@@ -82,8 +82,8 @@ export default function Contact() {
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="text-xs text-slate-500 font-semibold block">Phone</span>
-                    <a href="tel:0717519684" className="text-sm font-bold text-white hover:text-secondary transition-colors">
+                    <span className="text-xs text-slate-600 font-semibold block">Phone</span>
+                    <a href="tel:0717519684" className="text-sm font-bold text-slate-900 hover:text-secondary transition-colors">
                       0717519684
                     </a>
                   </div>
@@ -94,8 +94,8 @@ export default function Contact() {
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="text-xs text-slate-500 font-semibold block">Location</span>
-                    <span className="text-sm font-bold text-white">
+                    <span className="text-xs text-slate-600 font-semibold block">Location</span>
+                    <span className="text-sm font-bold text-slate-900">
                       Ukuwela, Sri Lanka
                     </span>
                   </div>
@@ -115,7 +115,7 @@ export default function Contact() {
             <form onSubmit={handleSubmit} className="glass-card p-6 sm:p-8 rounded-2xl border border-white/5 space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">
+                  <label htmlFor="name" className="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">
                     Name *
                   </label>
                   <input
@@ -124,13 +124,13 @@ export default function Contact() {
                     required
                     value={formState.name}
                     onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-primary/50 transition-colors"
+                    className="w-full bg-slate-100/50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-primary/50 transition-colors"
                     placeholder="John Doe"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">
+                  <label htmlFor="email" className="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">
                     Email *
                   </label>
                   <input
@@ -139,14 +139,14 @@ export default function Contact() {
                     required
                     value={formState.email}
                     onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-primary/50 transition-colors"
+                    className="w-full bg-slate-100/50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-primary/50 transition-colors"
                     placeholder="john@example.com"
                   />
                 </div>
               </div>
 
               <div>
-                <label htmlFor="subject" className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">
+                <label htmlFor="subject" className="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">
                   Subject
                 </label>
                 <input
@@ -154,13 +154,13 @@ export default function Contact() {
                   type="text"
                   value={formState.subject}
                   onChange={(e) => setFormState({ ...formState, subject: e.target.value })}
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-primary/50 transition-colors"
+                  className="w-full bg-slate-100/50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-primary/50 transition-colors"
                   placeholder="Collaboration Opportunities"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">
+                <label htmlFor="message" className="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">
                   Message *
                 </label>
                 <textarea
@@ -169,7 +169,7 @@ export default function Contact() {
                   rows={5}
                   value={formState.message}
                   onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-primary/50 transition-colors resize-none"
+                  className="w-full bg-slate-100/50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-primary/50 transition-colors resize-none"
                   placeholder="Tell me about your project detail..."
                 />
               </div>

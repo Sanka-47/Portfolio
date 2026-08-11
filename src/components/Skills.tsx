@@ -7,13 +7,13 @@ const skillCategories = [
   {
     title: "Programming Languages",
     icon: Cpu,
-    color: "text-violet-400 border-violet-500/20 bg-violet-500/5",
+    color: "text-slate-300 border-slate-400/20 bg-slate-400/5",
     skills: ["JavaScript", "TypeScript", "Java", "Python", "PHP", "Dart", "HTML/CSS", "XML"],
   },
   {
     title: "Frontend & Frameworks",
     icon: Layers,
-    color: "text-teal-400 border-teal-500/20 bg-teal-500/5",
+    color: "text-slate-400 border-slate-500/20 bg-slate-500/5",
     skills: ["React.js", "Next.js", "Tailwind CSS", "shadcn/ui", "Framer Motion", "Bootstrap"],
   },
   {
@@ -25,7 +25,7 @@ const skillCategories = [
   {
     title: "Mobile & Desktop Dev",
     icon: Smartphone,
-    color: "text-rose-400 border-rose-500/20 bg-rose-500/5",
+    color: "text-slate-200 border-slate-300/20 bg-slate-300/5",
     skills: ["Flutter", "Android Studio", "Java (Android)", "Swing/AWT (Desktop)"],
   },
   {
@@ -37,7 +37,7 @@ const skillCategories = [
   {
     title: "DevOps & Security",
     icon: Shield,
-    color: "text-emerald-400 border-emerald-500/20 bg-emerald-500/5",
+    color: "text-slate-400 border-slate-600/20 bg-slate-600/5",
     skills: ["Git/GitHub", "Docker", "Vercel", "n8n Automation", "JWT / OAuth / NextAuth", "AES / E2E Encryption", "CryptoJS"],
   },
 ];
@@ -54,7 +54,7 @@ export default function Skills() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-4"
+            className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-4"
           >
             Technical <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Skills</span>
           </motion.h2>
@@ -78,14 +78,14 @@ export default function Skills() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: catIndex * 0.1 }}
-                className="glass-card p-6 rounded-2xl relative border border-white/5 hover:border-primary/20"
+                className="glass-card p-6 rounded-2xl relative border border-slate-200/60 hover:border-primary/20"
               >
                 {/* Category Header */}
                 <div className="flex items-center space-x-3 mb-6">
                   <div className={`p-2.5 rounded-xl border ${category.color}`}>
                     <Icon className="w-5 h-5" />
                   </div>
-                  <h3 className="text-base font-bold text-white tracking-wide">
+                  <h3 className="text-base font-bold text-slate-900 tracking-wide">
                     {category.title}
                   </h3>
                 </div>
@@ -99,7 +99,7 @@ export default function Skills() {
                       whileInView={{ scale: 1, opacity: 1 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.3, delay: (catIndex * 0.05) + (skillIndex * 0.02) }}
-                      className="px-3 py-1.5 rounded-lg text-xs font-mono font-medium bg-white/5 border border-white/10 hover:border-primary/40 text-slate-300 hover:text-white cursor-default transition-all duration-200"
+                      className="px-3 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 border border-slate-200 hover:border-primary/40 text-slate-700 hover:text-slate-950 cursor-default transition-all duration-200"
                     >
                       {skill}
                     </motion.span>

@@ -45,7 +45,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative border-t border-white/5 bg-slate-950/60 py-12 z-10">
+    <footer className="relative border-t border-slate-200 bg-slate-100 py-12 z-10">
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
         
         {/* Logo and Brand */}
@@ -53,28 +53,28 @@ export default function Footer() {
           <div className="p-2 rounded-lg bg-primary/10 border border-primary/20 text-primary">
             <Terminal className="w-4 h-4" />
           </div>
-          <span className="font-sans font-bold text-lg tracking-tight text-white">
+          <span className="font-sans font-bold text-lg tracking-tight text-slate-900">
             Kalindu<span className="text-primary font-black">.</span>K
           </span>
         </div>
 
         {/* Links */}
-        <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-slate-400">
-          <a href="#about" className="hover:text-white transition-colors">About</a>
-          <a href="#skills" className="hover:text-white transition-colors">Skills</a>
-          <a href="#projects" className="hover:text-white transition-colors">Projects</a>
-          <a href="#experience" className="hover:text-white transition-colors">Experience</a>
-          <a href="#contact" className="hover:text-white transition-colors">Contact</a>
+        <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-slate-600">
+          <a href="#about" className="hover:text-slate-900 transition-colors">About</a>
+          <a href="#skills" className="hover:text-slate-900 transition-colors">Skills</a>
+          <a href="#projects" className="hover:text-slate-900 transition-colors">Projects</a>
+          <a href="#experience" className="hover:text-slate-900 transition-colors">Experience</a>
+          <a href="#contact" className="hover:text-slate-900 transition-colors">Contact</a>
         </div>
 
         {/* Socials & Back to Top */}
-        <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-4">
           <div className="flex items-center space-x-3">
             <a
               href="https://github.com/Sanka-47"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-lg bg-white/5 border border-white/5 text-slate-400 hover:text-white hover:border-primary/30 transition-all"
+              className="p-2 rounded-lg bg-slate-100 border border-slate-200 text-slate-500 hover:text-slate-900 hover:border-primary/30 transition-all"
               aria-label="GitHub"
             >
               <Github className="w-4 h-4" />
@@ -83,14 +83,14 @@ export default function Footer() {
               href="https://linkedin.com/in/kalindu-koanara47"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-lg bg-white/5 border border-white/5 text-slate-400 hover:text-white hover:border-primary/30 transition-all"
+              className="p-2 rounded-lg bg-slate-100 border border-slate-200 text-slate-500 hover:text-slate-900 hover:border-primary/30 transition-all"
               aria-label="LinkedIn"
             >
               <Linkedin className="w-4 h-4" />
             </a>
             <a
               href="mailto:kalindu47kk@gmail.com"
-              className="p-2 rounded-lg bg-white/5 border border-white/5 text-slate-400 hover:text-white hover:border-primary/30 transition-all"
+              className="p-2 rounded-lg bg-slate-100 border border-slate-200 text-slate-500 hover:text-slate-900 hover:border-primary/30 transition-all"
               aria-label="Email"
             >
               <Mail className="w-4 h-4" />
@@ -99,7 +99,7 @@ export default function Footer() {
 
           <button
             onClick={scrollToTop}
-            className="p-2 rounded-lg bg-white/5 border border-white/5 text-slate-400 hover:text-white hover:border-primary/30 transition-all"
+            className="p-2 rounded-lg bg-slate-100 border border-slate-200 text-slate-500 hover:text-slate-900 hover:border-primary/30 transition-all"
             aria-label="Scroll to top"
           >
             <ArrowUp className="w-4 h-4" />
@@ -108,7 +108,7 @@ export default function Footer() {
 
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 mt-8 pt-8 border-t border-white/5 text-center text-xs text-slate-500 font-mono">
+      <div className="max-w-7xl mx-auto px-6 mt-8 pt-8 border-t border-slate-200 text-center text-xs text-slate-500 font-mono">
         <p>© {new Date().getFullYear()} Kalindu Koanara. Built with Next.js & Tailwind CSS. All rights reserved.</p>
       </div>
     </footer>

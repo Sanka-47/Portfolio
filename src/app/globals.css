@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #030014;
-  --foreground: #f8fafc;
-  --primary: #8b5cf6;
-  --secondary: #14b8a6;
-  --accent: #f43f5e;
-  --card-bg: rgba(255, 255, 255, 0.03);
-  --card-border: rgba(255, 255, 255, 0.08);
-  --card-border-hover: rgba(139, 92, 246, 0.3);
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --primary: #1e293b;
+  --secondary: #64748b;
+  --accent: #0284c7;
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --card-border: rgba(148, 163, 184, 0.15);
+  --card-border-hover: rgba(2, 132, 199, 0.4);
 }
 
 @theme {
@@ -62,50 +62,50 @@ body {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #030014;
+  background: #f1f5f9;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(139, 92, 246, 0.3);
+  background: rgba(148, 163, 184, 0.5);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(139, 92, 246, 0.6);
+  background: rgba(148, 163, 184, 0.8);
 }
 
 /* Custom selection */
 ::selection {
-  background: rgba(139, 92, 246, 0.3);
-  color: #ffffff;
+  background: rgba(2, 132, 199, 0.15);
+  color: #0f172a;
 }
 
 /* Glassmorphism Classes */
 .glass-nav {
-  background: rgba(3, 0, 20, 0.7);
+  background: rgba(248, 250, 252, 0.8);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(148, 163, 184, 0.15);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .glass-card:hover {
-  background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(139, 92, 246, 0.4);
-  box-shadow: 0 10px 30px -10px rgba(139, 92, 246, 0.15);
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(2, 132, 199, 0.4);
+  box-shadow: 0 10px 30px -10px rgba(2, 132, 199, 0.1);
   transform: translateY(-4px);
 }
 
 .glass-modal {
-  background: rgba(3, 0, 20, 0.85);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(148, 163, 184, 0.2);
 }
 
 /* Background Gradients & Mesh */
@@ -116,9 +116,9 @@ body {
   right: 0;
   bottom: 0;
   background-image: 
-    radial-gradient(circle at 20% 30%, rgba(139, 92, 246, 0.1) 0px, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(20, 184, 166, 0.08) 0px, transparent 50%),
-    radial-gradient(circle at 50% 10%, rgba(244, 63, 94, 0.05) 0px, transparent 40%);
+    radial-gradient(circle at 20% 30%, rgba(148, 163, 184, 0.15) 0px, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(2, 132, 199, 0.08) 0px, transparent 50%),
+    radial-gradient(circle at 50% 10%, rgba(100, 116, 139, 0.12) 0px, transparent 40%);
   z-index: -1;
   pointer-events: none;
 }
@@ -126,17 +126,17 @@ body {
 .mesh-grid {
   background-size: 50px 50px;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+    linear-gradient(to right, rgba(15, 23, 42, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.025) 1px, transparent 1px);
 }
 
 /* Glowing text */
 .glow-text-primary {
-  text-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+  text-shadow: 0 0 20px rgba(2, 132, 199, 0.25);
 }
 
 .glow-text-secondary {
-  text-shadow: 0 0 20px rgba(20, 184, 166, 0.3);
+  text-shadow: 0 0 20px rgba(100, 116, 139, 0.25);
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */

@@ -86,7 +86,7 @@ export default function Hero() {
               className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-tight font-sans"
             >
               Hi, I'm <br />
-              <span className="bg-gradient-to-r from-primary via-indigo-400 to-secondary bg-clip-text text-transparent glow-text-primary">
+              <span className="bg-gradient-to-r from-slate-900 via-slate-800 to-sky-600 bg-clip-text text-transparent glow-text-primary">
                 Kalindu Koanara
               </span>
             </motion.h1>
@@ -95,7 +95,7 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="h-10 text-xl sm:text-2xl font-medium text-slate-300 flex items-center font-mono"
+              className="h-10 text-xl sm:text-2xl font-medium text-slate-600 flex items-center font-mono"
             >
               <span>[</span>
               <motion.span
@@ -104,7 +104,7 @@ export default function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -15 }}
                 transition={{ duration: 0.4 }}
-                className="text-secondary mx-2 font-semibold"
+                className="text-accent mx-2 font-semibold"
               >
                 {roles[roleIndex]}
               </motion.span>
@@ -116,7 +116,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-base sm:text-lg text-slate-400 max-w-xl leading-relaxed"
+            className="text-base sm:text-lg text-slate-600 max-w-xl leading-relaxed"
           >
             I construct scalable web and cross-platform mobile apps using **React**, **Next.js**, **Node.js**, **Flutter**, and **Java**. Passionate about E2E encryption, secure authentications, and AI workflow integrations.
           </motion.p>
@@ -132,7 +132,7 @@ export default function Hero() {
               href="https://github.com/Sanka-47"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-xl glass-card text-slate-300 hover:text-white hover:border-primary/50 transition-all hover:scale-110 duration-200"
+              className="p-3 rounded-xl glass-card text-slate-600 hover:text-slate-900 hover:border-slate-400 transition-all hover:scale-110 duration-200"
               aria-label="GitHub"
             >
               <Github className="w-5 h-5" />
@@ -141,14 +141,14 @@ export default function Hero() {
               href="https://linkedin.com/in/kalindu-koanara47"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-xl glass-card text-slate-300 hover:text-white hover:border-primary/50 transition-all hover:scale-110 duration-200"
+              className="p-3 rounded-xl glass-card text-slate-600 hover:text-slate-900 hover:border-slate-400 transition-all hover:scale-110 duration-200"
               aria-label="LinkedIn"
             >
               <Linkedin className="w-5 h-5" />
             </a>
             <a
               href="mailto:kalindu47kk@gmail.com"
-              className="p-3 rounded-xl glass-card text-slate-300 hover:text-white hover:border-primary/50 transition-all hover:scale-110 duration-200"
+              className="p-3 rounded-xl glass-card text-slate-600 hover:text-slate-900 hover:border-slate-400 transition-all hover:scale-110 duration-200"
               aria-label="Email"
             >
               <Mail className="w-5 h-5" />
@@ -164,16 +164,16 @@ export default function Hero() {
           >
             <a
               href="#projects"
-              className="group flex items-center justify-center space-x-2 px-6 py-3.5 rounded-xl font-bold bg-gradient-to-r from-primary via-indigo-600 to-secondary text-white shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:opacity-95 hover:scale-105 active:scale-95 transition-all duration-200"
+              className="group flex items-center justify-center space-x-2 px-6 py-3.5 rounded-xl font-bold bg-gradient-to-r from-slate-900 to-slate-800 text-white shadow-lg shadow-slate-900/10 hover:shadow-slate-900/25 hover:scale-105 active:scale-95 transition-all duration-200"
             >
               <span>Explore My Work</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
             <a
               href="#contact"
-              className="group flex items-center justify-center space-x-2 px-6 py-3.5 rounded-xl font-bold glass-card text-white hover:border-primary/40 hover:scale-105 active:scale-95 transition-all duration-200"
+              className="group flex items-center justify-center space-x-2 px-6 py-3.5 rounded-xl font-bold glass-card text-slate-800 hover:border-slate-400 hover:scale-105 active:scale-95 transition-all duration-200"
             >
-              <Download className="w-4 h-4 text-secondary group-hover:animate-bounce" />
+              <Download className="w-4 h-4 text-accent group-hover:animate-bounce" />
               <span>Get In Touch</span>
             </a>
           </motion.div>
@@ -189,60 +189,60 @@ export default function Hero() {
           <div className="w-full glass-card border-white/10 rounded-2xl overflow-hidden shadow-2xl relative">
             
             {/* Terminal Header */}
-            <div className="bg-slate-900/60 px-5 py-3 border-b border-white/5 flex items-center justify-between">
+            <div className="bg-slate-100 px-5 py-3 border-b border-slate-200 flex items-center justify-between">
               <div className="flex items-center space-x-2">
-                <span className="w-3 h-3 rounded-full bg-rose-500" />
-                <span className="w-3 h-3 rounded-full bg-amber-500" />
-                <span className="w-3 h-3 rounded-full bg-emerald-500" />
+                <span className="w-3 h-3 rounded-full bg-rose-400" />
+                <span className="w-3 h-3 rounded-full bg-amber-400" />
+                <span className="w-3 h-3 rounded-full bg-emerald-400" />
               </div>
               <span className="text-xs text-slate-500 font-mono">kalindu_profile.json</span>
               <span className="w-4" /> {/* Spacer */}
             </div>
 
             {/* Terminal Content */}
-            <div className="p-6 font-mono text-sm space-y-4 text-slate-300 bg-slate-950/40">
-              <div className="flex items-center text-slate-500">
-                <span className="text-primary mr-2">&gt;</span>
+            <div className="p-6 font-mono text-sm space-y-4 text-slate-700 bg-white/60">
+              <div className="flex items-center text-slate-400">
+                <span className="text-accent mr-2">&gt;</span>
                 <span>cat kalindu.json</span>
               </div>
               
-              <div className="text-slate-400">
-                <span className="text-indigo-300">{"{"}</span>
+              <div className="text-slate-600">
+                <span className="text-slate-400">{"{"}</span>
                 <div className="pl-4">
                   <div>
-                    <span className="text-teal-400">"name"</span>: <span className="text-amber-200">"Kalindu Koanara"</span>,
+                    <span className="text-sky-600 font-semibold">"name"</span>: <span className="text-slate-800">"Kalindu Koanara"</span>,
                   </div>
                   <div>
-                    <span className="text-teal-400">"origin"</span>: <span className="text-amber-200">"Sri Lanka"</span>,
+                    <span className="text-sky-600 font-semibold">"origin"</span>: <span className="text-slate-800">"Sri Lanka"</span>,
                   </div>
                   <div>
-                    <span className="text-teal-400">"experience"</span>: <span className="text-amber-200">"2+ Years Full Stack"</span>,
+                    <span className="text-sky-600 font-semibold">"experience"</span>: <span className="text-slate-800">"2+ Years Full Stack"</span>,
                   </div>
                   <div>
-                    <span className="text-teal-400">"focus"</span>: <span className="text-slate-300">{"["}</span>
-                    <span className="text-amber-200">"Web"</span>, <span className="text-amber-200">"Mobile"</span>, <span className="text-amber-200">"AI"</span>
-                    <span className="text-slate-300">{"]"}</span>,
+                    <span className="text-sky-600 font-semibold">"focus"</span>: <span className="text-slate-400">{"["}</span>
+                    <span className="text-slate-800">"Web"</span>, <span className="text-slate-800">"Mobile"</span>, <span className="text-slate-800">"AI"</span>
+                    <span className="text-slate-400">{"]"}</span>,
                   </div>
                   <div>
-                    <span className="text-teal-400">"core_stack"</span>: <span className="text-slate-300">{"["}</span>
-                    <div className="pl-4 text-rose-300">
+                    <span className="text-sky-600 font-semibold">"core_stack"</span>: <span className="text-slate-400">{"["}</span>
+                    <div className="pl-4 text-sky-700">
                       "React/Next.js",<br />
                       "Node.js/Express",<br />
                       "Flutter/Dart",<br />
                       "Java/MySQL"<br />
                     </div>
-                    <span className="text-slate-300">{"]"}</span>,
+                    <span className="text-slate-400">{"]"}</span>,
                   </div>
                   <div>
-                    <span className="text-teal-400">"aws_certified"</span>: <span className="text-emerald-400">true</span>
+                    <span className="text-sky-600 font-semibold">"aws_certified"</span>: <span className="text-emerald-600 font-semibold">true</span>
                   </div>
                 </div>
-                <span className="text-indigo-300">{"}"}</span>
+                <span className="text-slate-400">{"}"}</span>
               </div>
 
-              <div className="flex items-center text-slate-500 pt-2">
-                <span className="text-primary mr-2">&gt;</span>
-                <span className="animate-pulse">_</span>
+              <div className="flex items-center text-slate-400 pt-2">
+                <span className="text-accent mr-2">&gt;</span>
+                <span className="animate-pulse font-bold">_</span>
               </div>
             </div>
           </div>
