@@ -110,6 +110,19 @@ const projects: Project[] = [
     ]
   },
   {
+    title: "PayHere Starter Pack - Payment Gateway",
+    github: "https://github.com/Sanka-47/payhere_starter_pack",
+    tech: ["React.js", "Express.js", "SQLite3", "PayHere API", "Node.js", "React Router"],
+    category: "web",
+    description: "A full-stack payment gateway solution integrating PayHere API for secure one-time and subscription-based transactions with automated notification handling.",
+    features: [
+      "Built secure full-stack payment processing system integrated with PayHere payment gateway supporting one-time and subscription payments",
+      "Implemented automatic webhook notification handling to process real-time transaction updates and status synchronization",
+      "Designed lightweight SQLite database schema for persistent transaction data storage, retrieval, and merchant records",
+      "Developed interactive React frontend with client-side routing and Lucide icons for seamless checkout and payment tracking"
+    ]
+  },
+  {
     title: "TaprobaneWheels Admin Panel",
     github: "https://github.com/Sanka-47/admintabrobane",
     tech: ["React.js", "Tailwind CSS", "Firebase", "REST API"],
