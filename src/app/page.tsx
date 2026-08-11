@@ -7,10 +7,14 @@ import Projects from "@/components/Projects";
 import Experience from "@/components/Experience";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import CursorTrail from "@/components/CursorTrail";
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen relative overflow-hidden bg-background text-foreground">
+      {/* Custom Particle Cursor Trail */}
+      <CursorTrail />
+
       {/* Ambient Mesh Backgrounds */}
       <div className="fixed inset-0 mesh-bg -z-20" />
       <div className="fixed inset-0 mesh-grid opacity-30 -z-10" />
