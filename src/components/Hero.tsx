@@ -2,7 +2,9 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, Download, Mail, Sparkles } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const Github = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
@@ -50,6 +52,11 @@ const roles = [
 
 export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const terminalRef = useRef<HTMLDivElement>(null);
+  const leftContentRef = useRef<HTMLDivElement>(null);
+  const blob1Ref = useRef<HTMLDivElement>(null);
+  const blob2Ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -58,45 +65,158 @@ export default function Hero() {
     return () => clearInterval(timer);
   }, []);
 
+  // Floating background blobs animation & Entrance timeline
+  useGSAP(() => {
+    // Blob 1 floating
+    gsap.to(blob1Ref.current, {
+      x: "random(-50, 50)",
+      y: "random(-50, 50)",
+      scale: "random(0.85, 1.15)",
+      duration: 8,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut",
+    });
+
+    // Blob 2 floating
+    gsap.to(blob2Ref.current, {
+      x: "random(-50, 50)",
+      y: "random(-50, 50)",
+      scale: "random(0.85, 1.15)",
+      duration: 10,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut",
+    });
+
+    // Entrance timeline
+    const tl = gsap.timeline();
+    tl.from(".hero-badge", {
+      opacity: 0,
+      y: 30,
+      duration: 0.8,
+      ease: "power3.out",
+    })
+    .from([".hero-title-line-1", ".hero-title-line-2"], {
+      opacity: 0,
+      y: 40,
+      stagger: 0.15,
+      duration: 0.8,
+      ease: "power3.out",
+    }, "-=0.6")
+    .from(".hero-role", {
+      opacity: 0,
+      y: 20,
+      duration: 0.6,
+      ease: "power3.out",
+    }, "-=0.5")
+    .from(".hero-description", {
+      opacity: 0,
+      y: 20,
+      duration: 0.6,
+      ease: "power3.out",
+    }, "-=0.4")
+    .from(".hero-socials a", {
+      opacity: 0,
+      y: 15,
+      stagger: 0.08,
+      duration: 0.5,
+      ease: "back.out(1.7)",
+    }, "-=0.3")
+    .from(".hero-ctas a", {
+      opacity: 0,
+      y: 15,
+      stagger: 0.1,
+      duration: 0.5,
+      ease: "power3.out",
+    }, "-=0.3")
+    .from(".hero-terminal", {
+      opacity: 0,
+      scale: 0.95,
+      x: 30,
+      duration: 1,
+      ease: "power3.out",
+    }, "-=0.8");
+  }, { scope: containerRef });
+
+  // 3D Parallax Hover Effect
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!containerRef.current || !terminalRef.current || !leftContentRef.current) return;
+    const { clientX, clientY } = e;
+    const { left, top, width, height } = containerRef.current.getBoundingClientRect();
+    
+    // Calculate normalized cursor position (-0.5 to 0.5)
+    const x = (clientX - left) / width - 0.5;
+    const y = (clientY - top) / height - 0.5;
+
+    // Animate terminal tilt in 3D
+    gsap.to(terminalRef.current, {
+      rotationY: x * 25, // Max 25 degrees Y rotation
+      rotationX: -y * 25, // Max 25 degrees X rotation
+      x: x * 20, // Move slightly in X
+      y: y * 20, // Move slightly in Y
+      duration: 0.5,
+      ease: "power2.out",
+      transformPerspective: 1000,
+    });
+
+    // Animate left content subtle counter-parallax
+    gsap.to(leftContentRef.current, {
+      x: -x * 10,
+      y: -y * 10,
+      duration: 0.5,
+      ease: "power2.out",
+    });
+  };
+
+  const handleMouseLeave = () => {
+    if (!terminalRef.current || !leftContentRef.current) return;
+    // Smooth reset to origin
+    gsap.to(terminalRef.current, {
+      rotationY: 0,
+      rotationX: 0,
+      x: 0,
+      y: 0,
+      duration: 0.8,
+      ease: "power3.out",
+    });
+    gsap.to(leftContentRef.current, {
+      x: 0,
+      y: 0,
+      duration: 0.8,
+      ease: "power3.out",
+    });
+  };
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-24 pb-12 overflow-hidden mesh-grid">
+    <section
+      ref={containerRef}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className="relative min-h-screen flex items-center justify-center pt-24 pb-12 overflow-hidden mesh-grid"
+    >
       {/* Dynamic blob background decoration */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full filter blur-3xl animate-blob" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full filter blur-3xl animate-blob [animation-delay:4s]" />
+      <div ref={blob1Ref} className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full filter blur-3xl animate-blob" />
+      <div ref={blob2Ref} className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full filter blur-3xl animate-blob [animation-delay:4s]" />
 
       <div className="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
 
         {/* Left Content Column */}
-        <div className="lg:col-span-7 flex flex-col justify-center text-left space-y-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full glass-card border-primary/20 w-fit text-primary text-xs font-semibold uppercase tracking-wider"
-          >
+        <div ref={leftContentRef} className="lg:col-span-7 flex flex-col justify-center text-left space-y-6">
+          <div className="hero-badge inline-flex items-center space-x-2 px-3 py-1.5 rounded-full glass-card border-primary/20 w-fit text-primary text-xs font-semibold uppercase tracking-wider">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Available for Opportunities</span>
-          </motion.div>
+          </div>
 
           <div className="space-y-4">
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-tight font-sans"
-            >
-              <span className="bg-gradient-to-r from-slate-900 via-slate-800 to-sky-600 bg-clip-text text-transparent glow-text-primary">Hi, I'm</span> <br />
-              <span className="bg-gradient-to-r from-slate-900 via-slate-800 to-sky-600 bg-clip-text text-transparent glow-text-primary">
+            <h1 className="hero-title text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-tight font-sans">
+              <span className="hero-title-line-1 inline-block bg-gradient-to-r from-slate-900 via-slate-800 to-sky-600 bg-clip-text text-transparent glow-text-primary">Hi, I'm</span> <br />
+              <span className="hero-title-line-2 inline-block bg-gradient-to-r from-slate-900 via-slate-800 to-sky-600 bg-clip-text text-transparent glow-text-primary">
                 Kalindu Koanara
               </span>
-            </motion.h1>
+            </h1>
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="h-10 text-xl sm:text-2xl font-medium text-slate-600 flex items-center font-mono"
-            >
+            <div className="hero-role h-10 text-xl sm:text-2xl font-medium text-slate-600 flex items-center font-mono">
               <span>[</span>
               <motion.span
                 key={roleIndex}
@@ -109,25 +229,15 @@ export default function Hero() {
                 {roles[roleIndex]}
               </motion.span>
               <span>]</span>
-            </motion.div>
+            </div>
           </div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 25 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-base sm:text-lg text-slate-600 max-w-xl leading-relaxed"
-          >
+          <p className="hero-description text-base sm:text-lg text-slate-600 max-w-xl leading-relaxed">
             I construct scalable web and cross-platform mobile apps using **React**, **Next.js**, **Node.js**, **Flutter**, and **Java**. Passionate about E2E encryption, secure authentications, and AI workflow integrations.
-          </motion.p>
+          </p>
 
           {/* Social Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="flex items-center space-x-4"
-          >
+          <div className="hero-socials flex items-center space-x-4">
             <a
               href="https://github.com/Sanka-47"
               target="_blank"
@@ -153,15 +263,10 @@ export default function Hero() {
             >
               <Mail className="w-5 h-5" />
             </a>
-          </motion.div>
+          </div>
 
           {/* CTA Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 pt-2"
-          >
+          <div className="hero-ctas flex flex-col sm:flex-row gap-4 pt-2">
             <a
               href="#projects"
               className="group flex items-center justify-center space-x-2 px-6 py-3.5 rounded-xl font-bold bg-gradient-to-r from-slate-900 to-slate-800 text-white shadow-lg shadow-slate-900/10 hover:shadow-slate-900/25 hover:scale-105 active:scale-95 transition-all duration-200"
@@ -176,15 +281,14 @@ export default function Hero() {
               <Download className="w-4 h-4 text-accent group-hover:animate-bounce" />
               <span>Get In Touch</span>
             </a>
-          </motion.div>
+          </div>
         </div>
 
         {/* Right Terminal Column */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9, x: 50 }}
-          animate={{ opacity: 1, scale: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="lg:col-span-5 hidden lg:block"
+        <div
+          ref={terminalRef}
+          className="hero-terminal lg:col-span-5 hidden lg:block will-change-transform"
+          style={{ transformStyle: "preserve-3d" }}
         >
           <div className="w-full glass-card border-white/10 rounded-2xl overflow-hidden shadow-2xl relative">
 
@@ -246,7 +350,7 @@ export default function Hero() {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
