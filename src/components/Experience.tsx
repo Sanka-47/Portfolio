@@ -5,7 +5,7 @@ import { Briefcase, Calendar, CheckCircle } from "lucide-react";
 
 const experiences = [
   {
-    role: "Associate Developer",
+    role: "Junior Developer",
     company: "Future Code Technologies",
     period: "June 2025 - Present",
     bullets: [
@@ -33,7 +33,7 @@ export default function Experience() {
   return (
     <section id="experience" className="relative py-24 z-10 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-6">
-        
+
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.h2
@@ -80,7 +80,7 @@ export default function Experience() {
                       {exp.company}
                     </p>
                   </div>
-                  
+
                   <div className="inline-flex items-center text-xs text-slate-600 font-mono bg-slate-100 px-3 py-1 rounded-full border border-slate-200 w-fit">
                     <Calendar className="w-3.5 h-3.5 mr-1.5 text-primary" />
                     <span>{exp.period}</span>
