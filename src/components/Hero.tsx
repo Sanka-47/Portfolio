@@ -65,7 +65,7 @@ export default function Hero() {
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full filter blur-3xl animate-blob [animation-delay:4s]" />
 
       <div className="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
-        
+
         {/* Left Content Column */}
         <div className="lg:col-span-7 flex flex-col justify-center text-left space-y-6">
           <motion.div
@@ -85,7 +85,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-tight font-sans"
             >
-              Hi, I'm <br />
+              <span className="bg-gradient-to-r from-slate-900 via-slate-800 to-sky-600 bg-clip-text text-transparent glow-text-primary">Hi, I'm</span> <br />
               <span className="bg-gradient-to-r from-slate-900 via-slate-800 to-sky-600 bg-clip-text text-transparent glow-text-primary">
                 Kalindu Koanara
               </span>
@@ -187,7 +187,7 @@ export default function Hero() {
           className="lg:col-span-5 hidden lg:block"
         >
           <div className="w-full glass-card border-white/10 rounded-2xl overflow-hidden shadow-2xl relative">
-            
+
             {/* Terminal Header */}
             <div className="bg-slate-100 px-5 py-3 border-b border-slate-200 flex items-center justify-between">
               <div className="flex items-center space-x-2">
@@ -205,7 +205,7 @@ export default function Hero() {
                 <span className="text-accent mr-2">&gt;</span>
                 <span>cat kalindu.json</span>
               </div>
-              
+
               <div className="text-slate-600">
                 <span className="text-slate-400">{"{"}</span>
                 <div className="pl-4">
